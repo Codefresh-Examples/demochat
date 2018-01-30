@@ -10,7 +10,7 @@ image:
   tag: master
   pullPolicy: Always
 service:
-  name: demochat
+  name: demochat-helm
   type: LoadBalancer
   externalPort: 80
   internalPort: 5000
