@@ -1,0 +1,4 @@
+apiVersion: v1
+description: demochat-helm
+name: demochat-helm
+version: 0.0.2
