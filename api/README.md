@@ -10,7 +10,7 @@ This directory contains:
   - ECMA2015 compatible runtime (NodeJS >= v6.x.x)
 
 # How to run
-
+a
 In this directiory run 
 ```
 npm install
