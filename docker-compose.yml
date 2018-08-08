@@ -1,12 +1,9 @@
-
-#this is an example of a self-hosted chat app.
-#the composition uses just mongo as a database and an image that was built from a demo application https://github.com/containers101/demochat
-
 version: '2'
 services:
-  demochat:
-    build: .
-    ports:
-      - 5000
-  mongo:
-    image: mongo
+  elasticsearch:
+    image: 'elasticsearch:5.1-alpine'
+  datasets:
+    image: 'circleci/postgres:9.6-alpine'
+    command: ls -la /amir
+    volumes:
+      - '/var/lib/docker/volumes/${{CF_VOLUME}}/_data/${{CF_REPO_NAME}}/extras/emotes/:/amir'
