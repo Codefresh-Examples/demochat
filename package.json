@@ -96,7 +96,8 @@
     "passport-local": "1.0.0",
     "passport.socketio": "3.5.1",
     "require-directory": "^2.1.1",
-    "require-tree": "^1.1.1"
+    "require-tree": "^1.1.1",
+    "mocha-allure-reporter": "^1.4.0"
   },
   "devDependencies": {
     "eslint": "^1.10.3",

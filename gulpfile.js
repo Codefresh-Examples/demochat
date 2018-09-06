@@ -16,7 +16,7 @@ gulp.task('test', ['pre-test'], function () {
   console.log('test task')
   return gulp.src(['app/tests/*.js'])
   	.pipe(debug({title: 'unicorn:'}))
-    .pipe(mocha({timeout:10000}))
+    .pipe(mocha({reporter: 'mocha-allure-reporter', timeout:10000}))
     // Creating the reports after tests ran
     .pipe(istanbul.writeReports())
     // Enforce a coverage of at least 90%
