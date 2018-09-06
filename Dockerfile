@@ -1,4 +1,4 @@
-FROM node:0.10-slim
+FROM node:9.6.1-alpine
 
 RUN npm install -g mocha
 RUN npm install -g istanbul
