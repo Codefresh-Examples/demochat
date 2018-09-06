@@ -9,7 +9,7 @@
     "stop": "pkill --signal SIGINT letschat",
     "prestart": "migroose",
     "migrate": "migroose",
-    "test": "mocha ./app/tests"
+    "test": "mocha ./app/tests --reporter mocha-allure-reporter"
   },
   "engine": {
     "node": "0.10.x",
