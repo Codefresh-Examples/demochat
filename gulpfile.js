@@ -15,10 +15,10 @@ gulp.task('pre-test', function () {
 gulp.task('test', ['pre-test'], function () {
   console.log('test task')
   return gulp.src(['app/tests/*.js'])
-  	.pipe(debug({title: 'unicorn:'}))
-    .pipe(mocha({timeout:10000}))
+  	// .pipe(debug({title: 'unicorn:'}))
+      .pipe(mocha({ timeout:10000, reporter: 'mocha-allure-reporter' }))
     // Creating the reports after tests ran
-    .pipe(istanbul.writeReports())
+    // .pipe(istanbul.writeReports())
     // Enforce a coverage of at least 90%
     //.pipe(istanbul.enforceThresholds({ thresholds: { global: 20} }));
 });
