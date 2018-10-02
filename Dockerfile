@@ -1,6 +1,7 @@
-FROM node:9.6.1-alpine
-MAINTAINER test@.com 
-#RUN npm install -g mocha
+FROM node:10.3.0-alpine
+
+RUN npm config set unsafe-perm true
+RUN npm install -g mocha
 RUN npm install -g gulp
 
 COPY ./package.json /src/package.json
