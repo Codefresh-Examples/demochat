@@ -1,6 +1,6 @@
 ![Let's Chat Greylock](https://codefresh.io/wp-content/uploads/2017/03/lets-chat.png)
 
-ar4s
+ar4sm
 Use this tutorial to familiarize yourself with codefresh.yml file and Codefresh functionality.
 
 ![Screenshot](https://codefresh.io/wp-content/uploads/2017/03/11.png)
