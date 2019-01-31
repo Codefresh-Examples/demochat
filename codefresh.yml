@@ -1,0 +1,53 @@
+version: '1.0'
+
+stages:
+- preparation
+- build
+- test
+- push
+
+steps:
+
+  main_clone:
+    title: 'Cloning main repository...'
+    type: git-clone
+    stage: preparation
+    repo: Codefresh-Examples/demochat
+    revision: ${{CF_BRANCH}}
+    
+  BuildImage:
+    title: Building Docker Image
+    stage: build
+    type: build
+    image_name: codefresh/demochat
+    dockerfile: Dockerfile
+    tag: '${{CF_SHORT_REVISION}}'
+    
+  RunningUnitTests:
+    title: Running Unit Tests
+    stage: test
+    image: ${{BuildImage}}
+    working_directory: IMAGE_WORK_DIR
+    commands:
+      - npm test
+    on_success:
+      metadata:
+        set:
+          - '${{BuildImage.imageId}}':
+              - CF_QUALITY: true
+              - commit_message: '${{CF_COMMIT_MESSAGE}}'
+              - Commit: '${{CF_SHORT_REVISION}}'
+              - Author: '${{CF_COMMIT_AUTHOR}}'
+              - Commit_url: '${{CF_COMMIT_URL}}'
+    on_fail:
+      metadata:
+        set:
+          - '${{BuildImage.imageId}}':
+              - CF_QUALITY: false
+              
+  PushToDockerHub:
+    type: push
+    stage: push
+    candidate: '${{BuildImage}}'
+    tag: '${{CF_SHORT_REVISION}}'
+    registry: dockerhub
