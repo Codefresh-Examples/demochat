@@ -1,6 +1,6 @@
 ![Let's Chat Greylock](https://codefresh.io/wp-content/uploads/2017/03/lets-chat.png)
 
-
+ar4sm
 Use this tutorial to familiarize yourself with codefresh.yml file and Codefresh functionality.
 
 ![Screenshot](https://codefresh.io/wp-content/uploads/2017/03/11.png)
@@ -36,7 +36,7 @@ Now enter Codefresh and add your Let’s Chat app as a Codefresh service.
 Click on ___Add Repository___
 
 ![Screenshot](https://codefresh.io/wp-content/uploads/2017/03/add-repo.png)
-q
+qa
 
 Now add your forked demochat repo. You can search for it by typing "demochat" to search. You can also Add by URL here.
 
